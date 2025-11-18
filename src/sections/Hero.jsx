@@ -1,6 +1,6 @@
-import React from 'react'
+import { Suspense } from 'react'
 import { words } from '../constants/index.js'
-import Button from '../components/button.jsx'
+import Button from '../components/Button.jsx'
 import HeroExperience from '../components/HeroModels/HeroExperience.jsx'
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
@@ -57,7 +57,9 @@ const Hero = () => {
             </header>
             <figure>
                 <div className='hero-3d-layout'>
-                    <HeroExperience />
+                    <Suspense fallback={null}>
+                        <HeroExperience />
+                    </Suspense>
                 </div>
             </figure>
         </div>
